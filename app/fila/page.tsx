@@ -43,7 +43,7 @@ export default function FilaPage() {
         </button>
       </div>
 
-      <div className="flex gap-2 border-2 border-dashed p-4 min-h-50 rounded-lg items-center">
+      <div className="flex flex-wrap gap-2 border-2 border-dashed p-4 min-h-50 rounded-lg items-center">
         {fila.length === 0 && (
           <p className='text-center text-gray-400'>A fila está vazia</p>
         )}
