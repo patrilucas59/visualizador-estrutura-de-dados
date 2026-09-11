@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 
-export default function FilaPage() {
-  const [fila, setFila] = useState<number[]>([]);
-  const [valor, setValor] = useState('');
+export default function QueuePage() {
+  const [queue, setQueue] = useState<number[]>([]);
+  const [value, setValue] = useState('');
 
   function lineUp() {
-    if (valor.trim() === '') return;
-    setFila([...fila, Number(valor)]);
-    setValor('');
+    if (value.trim() === '') return;
+    setQueue([...queue, Number(value)]);
+    setValue('');
   }
 
   function dequeue() {
-    setFila(fila.slice(1));
+    setQueue(queue.slice(1));
   }
 
   return (
@@ -23,8 +23,8 @@ export default function FilaPage() {
       <div className='flex flex-col gap-5 mb-6'>
         <input 
           type='number'
-          value={valor}
-          onChange={(event) => setValor(event.target.value)}
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
           className='border rounded px-3 py-2 flex-1'
           placeholder='Digite um valor'
         />
@@ -37,17 +37,17 @@ export default function FilaPage() {
         <button 
           onClick={dequeue}
           className='gap-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer'
-          disabled={fila.length === 0}
+          disabled={queue.length === 0}
         >
           Desenfileirar
         </button>
       </div>
 
       <div className="flex flex-wrap gap-2 border-2 border-dashed p-4 min-h-50 rounded-lg items-center">
-        {fila.length === 0 && (
+        {queue.length === 0 && (
           <p className='text-center text-gray-400'>A fila está vazia</p>
         )}
-        {fila.map((item, index) => (
+        {queue.map((item, index) => (
           <div key={index} className='bg-green-500 text-white text-center py-3 px-4 rounded transition-all duration-300'>
             {item}
           </div>
