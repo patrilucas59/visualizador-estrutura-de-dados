@@ -16,6 +16,9 @@ export default function Home() {
         <Link href='arvore' className='bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-colors'>
           Árvore Binária de Busca
         </Link>
+        <Link href='array' className='bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-lg font-medium transition-colors'>
+          Array
+        </Link>
 
       </div>
     </main>
