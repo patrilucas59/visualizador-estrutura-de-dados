@@ -6,13 +6,13 @@ export default function FilaPage() {
   const [fila, setFila] = useState<number[]>([]);
   const [valor, setValor] = useState('');
 
-  function enfileirar() {
+  function lineUp() {
     if (valor.trim() === '') return;
     setFila([...fila, Number(valor)]);
     setValor('');
   }
 
-  function desenfileirar() {
+  function dequeue() {
     setFila(fila.slice(1));
   }
 
@@ -29,13 +29,13 @@ export default function FilaPage() {
           placeholder='Digite um valor'
         />
         <button 
-          onClick={enfileirar}
+          onClick={lineUp}
           className='gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer'
         >
           Enfileirar
         </button>
         <button 
-          onClick={desenfileirar}
+          onClick={dequeue}
           className='gap-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer'
           disabled={fila.length === 0}
         >
